@@ -28,7 +28,7 @@ const server = http.createServer((req, res)=>{
     const page = routes[params[params[param]]];
 
     res.setHeader('Content-Type', 'text/html');
-    res.writeHead(200);
+    (params[params[param]] === '404') ? res.writeHead(404):res.writeHead(200);
     res.end(page);
 });
 
